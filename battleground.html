@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="battleground.css">
+</head>
+
+<body>
+    <a href="home.html">Go back to home</a>
+    <br><br>
+    <h2>The battleground</h2>
+
+    <div>
+        <h4>Player's Health: <span id="health"></span></h4>
+        <h4>Weapon: <span id="weapon"></span></h4>
+        <h4>Weapon Damage: <span id="weapDmg"></span></h4>
+        <h4>Armor: <span id="armor"></span></h4>
+        <h4>Damage Reduction: <span  id="dmgReduction"></span></span></h4>
+        <h4>Current Money: <span id="money"></span></h4>
+        <h4>Current Stamina: <span id="stamina"></span></h4>
+    </div>
+
+    <p id="noStamina" class="hideStamina">You don't enough stamina!</p>
+
+    <!--class="hideBattleStats"-->
+    <div id="battleStats" class="hideBattleStats">
+        <h2>Your opponent is: <span id="opponent"></span></h2>
+        <h3>Enemy's Health: <span id="opponentHealth"></span></h3>
+        <div>
+            <h3>Battle reports</h3>
+
+            <p id="eAttack"></p>
+            <p id="pAttack"></p>
+
+        </div>
+    </div>
+
+    <p id="outcome"></p>
+
+    <br>
+    <br>
+    <p>Tip: you can continue to battle if you have enough stamina and health</p>
+    <h3>Choose your enemy</h3>
+    <div>
+        <p>Level 1 Monster: Monkey</p><span>
+            <button id="monkey" value="monkey">Battle</button>
+    </div>
+    <div>
+        <p>Level 2 Monster: Shark</p><span>
+            <button id="shark" value="shark">Battle</button>
+    </div>
+    <div>
+        <p>Level 3 Monster: Lion</p><span>
+            <button id="lion" value="lion">Battle</button>
+    </div>
+    <div>
+        <p>Level 4 Monster: Evil Mutated Super Human</p><span>
+            <button id="human" value="human">Battle</button>
+    </div>
+    <div>
+        <p>Level 5 Monster: Alien</p><span>
+            <button id="alien" value="alien">Battle</button>
+    </div>
+
+
+    <script type="module" src="battlegroundScript.js"></script>
+</body>
+
+</html>

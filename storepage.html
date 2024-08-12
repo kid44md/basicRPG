@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="store.css">
+</head>
+
+<body>
+
+    <a href="home.html">Home</a>
+
+    <h1>Welcome to our the store, traveler!</h1>
+    <h4>You have <span id="money"></span> gold</h4>
+    <h4>Your current weapon is a <span id="weap"></span> <br>and the damage is <span id="weapDmg"></span></h4>
+    <h4>Your current armor is <span id="armor"></span> <br> and it gives <span  id="dmgReduction"></span> damage Reduction</h4>
+    <button id="openWeaponShop" value="openWeaponShop">Shop for Weapons</button>
+    <br> <button id="openArmorShop" value="openArmorShop">Shop for Armor</button>
+    <br>
+    <button id="closeWeaponShop" value="closeWeaponShop" class="closeStore">Close Weapon Shop</button>
+    <br> <button id="closeArmorShop" value="closeArmorShop" class="closeStore">Close Armor Shop</button>
+
+    <div id="weaponBox" class="closeStore">
+        <br>
+        <button id="bat" value="Bat">buy a bat</button>
+        <p>Cost: 4 gold</p>
+        <span>Damage: 5</span>
+        <br>
+        <br>
+        <button id="crowbar" value="Crowbar">buy a crowbar</button>
+        <p>Cost: 10 gold</p>
+        <span>Damage: 8</span>
+        <br>
+        <br>
+        <button id="pistol" value="pistol">buy a pistol</button>
+        <p>Cost: 15 gold</p>
+        <span>Damage: 14</span>
+        <br>
+        <br>
+        <button id="shotgun" value="shotgun">buy a shotgun</button>
+        <p>Cost: 22 gold</p>
+        <span>Damage: 20</span>
+        <br><br>
+        <button id="sniper" value="sniper">buy a sniper</button>
+        <p>Cost: 50 gold</p>
+        <span>Damage: 36</span>
+    </div>
+    <div id="armorBox" class="closeStore">
+        <br><br>
+        <button id="Leather" value="Leather">buy Leather armor</button>
+        <p>Cost: 4</p>
+        <span>Damage Reduction: 3</span>
+        <br>
+        <br>
+        <button id="Wool" value="Wool">buy Wool armor</button>
+        <p>Cost: 10</p>
+        <span>Damage Reduction: 6</span>
+        <br><br>
+        <button id="Copper" value="Copper">buy Copper armor</button>
+        <p>Cost: 15</p>
+        <span>Damage Reduction: 12</span>
+        <br><br>
+        <button id="Steel" value="Steel">buy Steel armor</button>
+        <p>Cost: 30 gold</p>
+        <span>Damage Reduction: 20</span>
+        <br><br>
+        <button id="adam" value="adam">buy Adaminium armor</button>
+        <p>Cost: 40 gold</p>
+        <span>Damage Reduction: 45</span>
+        <br><br>
+
+    </div>
+
+    <div>
+        <p id="purchase"></p>
+        <p id="nonPurchase"></p>
+        <p id="noMoney"></p>
+    </div>
+    <!--dynamically create the list of weapons in javascript-->
+    <!--create the view manually, attach a value to each of the items -->
+
+    <script type="module" src="store.js"></script>
+</body>
+
+
+
+</html>

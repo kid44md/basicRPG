@@ -1,0 +1,8 @@
+.hideBattleStats{
+   display: none;
+    border: 1px solid green;
+}
+
+.hideStamina{
+    display: none;
+}
