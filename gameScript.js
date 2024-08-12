@@ -344,7 +344,20 @@ let defaultArmorArray = [{
                 }
             }
 
-        }else if (getMoney != null && getWeapon != null && getArmor != null){
+        }else if (getMoney != null && getHealth != null && getStamina != null) {
+           
+
+            playerObj.setMoney(parseMoney);
+            playerObj.setStamina(parseStamina);
+            playerObj.setHealth(parseHealth);
+            moneyUI.innerText = playerObj.getMoney();
+            weaponUI.innerText = playerObj.getWeapon();
+            armorUI.innerText = playerObj.getArmor();
+            staminaUI.innerText = playerObj.getStamina();
+            healthUI.innerText = playerObj.getHealth();
+
+
+        } else if (getMoney != null && getWeapon != null && getArmor != null){
 
             playerObj.setMoney(parseMoney);
             for (let i = 0; i < parseWeapon.length; i++) {

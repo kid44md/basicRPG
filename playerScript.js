@@ -14,7 +14,7 @@ export default class player {
         this.health = 100;
         this.armor = "shirt";
         this.armorDamageReduction = 2;
-        this.money = 100;
+        this.money = 20;
         this.stamina = 10;
         this.weapon = "stick";
         this.weaponDmg = 4;

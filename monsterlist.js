@@ -2,37 +2,37 @@
 
 export var monsterList = [{
     enemyName: "monkey",
-    damage: 8,
+    damage: 9,
     health: 10,
     staminaUsed: 1,
     money: 5,
-    criticalHit: 10,
+    criticalHit: 15,
 }, {
     enemyName: "shark",
-    damage: 12,
+    damage: 14,
     health: 30,
     staminaUsed: 1,
     money: 10,
-    criticalHit: 15
+    criticalHit: 23
 }, {
     enemyName: "lion",
     damage: 20,
     health: 40,
     staminaUsed: 1,
     money: 25,
-    criticalHit: 25
+    criticalHit: 31
 }, {
     enemyName: "human",
-    damage: 30,
-    health: 30,
+    damage: 35,
+    health: 45,
     staminaUsed: 1,
     money: 35,
-    criticalHit:35
+    criticalHit:55
 }, {
     enemyName: "alien",
     damage: 40,
     health: 60,
     staminaUsed: 1,
-    money: 50,
-    criticalHit: 45
+    money: 60,
+    criticalHit: 50
 }];

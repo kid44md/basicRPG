@@ -176,11 +176,13 @@ async function battleSim(event) {
 // this handles the attack phase 
 function attackInfoDisplay(attack, playerObj, enemyStats) {
     let playerHealth = playerObj.getHealth();
+    console.log(playerObj.getArmorReduction());
     return new Promise(function (resolve, reject) {
         setTimeout(() => {
             if (attack == 0) {
-                playerHealth = playerHealth - enemyStats.damage;
+                playerHealth = (playerHealth + playerObj.getArmorReduction()) - enemyStats.damage;
                 enemyStats.health = enemyStats.health - playerObj.getWeaponDmg();
+                console.log(playerHealth);
                 resolve({
                     playerHealth: playerHealth,
                     enemyHealth: enemyStats.health,
@@ -188,8 +190,9 @@ function attackInfoDisplay(attack, playerObj, enemyStats) {
                     playerStatement: `player has dealt ${playerObj.getWeaponDmg()} damage`
                 });
             } else if (attack == 1) {
-                playerHealth = playerHealth - enemyStats.damage;
+                playerHealth = (playerHealth + playerObj.getArmorReduction()) - enemyStats.damage;
                 enemyStats.health = enemyStats.health - playerObj.getWeaponDmg();
+                console.log(playerHealth);
                 resolve({
                     playerHealth: playerHealth,
                     enemyHealth: enemyStats.health,
@@ -374,7 +377,7 @@ function updateBattleDisplay() {
             healthLabel.innerText = playerObj.getHealth();
             staminaLabel.innerText = playerObj.getStamina();
             weaponDmgLabel.innerText = playerObj.getWeaponDmg();
-
+            dmgReductLabel.innerText = playerObj.getArmorReduction();
         }
 
 
