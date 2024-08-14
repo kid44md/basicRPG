@@ -20,9 +20,13 @@ sleepBtn.addEventListener('click', sleeping)
 
 
 function sleeping (event){
+let playerHealth = playerObj.getHealth();
+let playerStamina = playerObj.getStamina();
+/**i want to prevent the player from using this button if their health is already at 100 or stamina is at 10   */
+
+if( playerHealth != 100 && playerStamina != 10 ){
 event.target.disabled = true;
 sleepingStatus.innerText = `You are currently sleeping at the moment....please wait`;
-
 setTimeout(()=>{
 sleepingStatus.innerText = "";
 localStorage.setItem('health', 100);
@@ -33,8 +37,9 @@ healthUI.innerText = playerObj.getHealth();
 staminaUI.innerText = playerObj.getStamina();
 event.target.disabled = false;
 }, 2000);
-
-
+}else{
+    sleepingStatus.innerText = `You can not sleep, currently you have max health and max stamina`;
+}
 };
 
 
