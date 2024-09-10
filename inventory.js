@@ -32,7 +32,6 @@ function changeArmor(event) {
 
 
 function changeWeapon(event) {
-   
     let getWeapon = localStorage.getItem('weapons');
     let parseWeapon = JSON.parse(getWeapon);
     //if leather is selected make leather the active equipment then make wool the inactive equipment 
@@ -42,7 +41,7 @@ function changeWeapon(event) {
             break;
         }
     }
-    
+
     /**this will continue to loop while setting all non-equip to false */
     for (let i = 0; i < parseWeapon.length; i++) {
         if (event.target.value != parseWeapon[i].weapon) {
@@ -58,6 +57,7 @@ then put the data inside the ul html to get the desired output. i placed a condi
 not current equipped*/
 
 function updateInventory(parseArmor, parseWeapon) {
+
     if (parseArmor != null && parseWeapon != null) {
         armorContainer.innerHTML = "";
         weaponContainer.innerHTML = "";
@@ -67,7 +67,7 @@ function updateInventory(parseArmor, parseWeapon) {
 
             let text = parseArmor[i].isActive ?
                 `<li><strong>Currently equiped:</strong> <span>${parseArmor[i].isActive}</span></li>` :
-                `<button id='equipNewArmor' value='${parseArmor[i].armor}'>Equip Armor</button>`;
+                `<button id="equipNewArmor'" value='${parseArmor[i].armor}'>Equip Armor</button>`;
 
             data = data + text;
 
@@ -80,7 +80,7 @@ function updateInventory(parseArmor, parseWeapon) {
 
             var t = parseWeapon[i].isActive ?
                 `<li><strong>Currently equiped:</strong> <span>${parseWeapon[i].isActive}</span></li>` :
-                `<button id='NewWeapon' value='${parseWeapon[i].weapon}'>Equip Weapon</button>`;
+                `<button id="NewWeapon" value='${parseWeapon[i].weapon}'>Equip Weapon</button>`;
 
             d = d + t;
 
@@ -96,7 +96,7 @@ function updateInventory(parseArmor, parseWeapon) {
 
             let text = parseArmor[i].isActive ?
                 `<li><strong>Currently equiped:</strong> <span>${parseArmor[i].isActive}</span></li>` :
-                `<button id='equipNewArmor' value='${parseArmor[i].armor}'>Equip Armor</button>`;
+                `<button id="equipNewArmor" value='${parseArmor[i].armor}'>Equip Armor</button>`;
 
             data = data + text;
 
@@ -111,7 +111,7 @@ function updateInventory(parseArmor, parseWeapon) {
 
             var t = parseWeapon[i].isActive ?
                 `<li><strong>Currently equiped:</strong> <span>${parseWeapon[i].isActive}</span></li>` :
-                `<button id='NewWeapon' value='${parseWeapon[i].weapon}'>Equip Weapon</button>`;
+                `<button id="NewWeapon" value='${parseWeapon[i].weapon}'>Equip Weapon</button>`;
 
             d = d + t;
 
@@ -121,11 +121,11 @@ function updateInventory(parseArmor, parseWeapon) {
     }
 
 
-/**calling the onload event when all of the html is on the page and that is ready to be used, our button are dynamically 
+    /**calling the onload event when all of the html is on the page and that is ready to be used, our button are dynamically 
      * created not statically 
      */
 
-onLoad();
+    onLoad();
 
 };
 
@@ -138,12 +138,18 @@ updateInventory(parseArmor, parseWeapon);
  * once the page is fully loaded these variable will able useable 
  * 
  */
-
 function onLoad() {
     var equipWeapBtn = document.getElementById('NewWeapon');
-    var equipBtn = document.getElementById('equipNewArmor');
-    equipBtn.addEventListener('click', changeArmor);
-    equipWeapBtn.addEventListener('click', changeWeapon);
+    var equipBtn = document.getElementById("equipNewArmor");
+
+    if (equipWeapBtn && equipBtn) {
+        equipBtn.addEventListener('click', changeArmor);
+        equipWeapBtn.addEventListener('click', changeWeapon);
+    } else if (equipWeapBtn && equipBtn == null) {
+        equipWeapBtn.addEventListener('click', changeWeapon);
+    } else if (equipWeapBtn == null && equipBtn) {
+        equipBtn.addEventListener('click', changeArmor);
+    }
 };
 
 
